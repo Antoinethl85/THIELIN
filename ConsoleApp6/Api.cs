@@ -11,17 +11,12 @@ namespace ConsoleApp6
 {
     public class Api
     {
-        private HttpClient _client;
+        private HttpClient _client = new HttpClient();
         private static string _url = "https://api.openweathermap.org/data/3.0/onecall";
-        private string _key;
+        private string _key = "624c4ed18365308ce225acee2b5c2bd2";
+        
 
-        //A MODIFIER
-        public Api(Api _api)
-        {
-            _client = new HttpClient();
-        }
-
-        public Root getWeatherMaroco(string lat, string lon)
+        public Root GetWeatherMorocco(string lat, string lon)
         {
             Dictionary<string, string> content = new Dictionary<string, string>
             {
@@ -37,9 +32,9 @@ namespace ConsoleApp6
 
         private async Task<string> Request(HttpClient client, Dictionary<string, string> parameters)
         {
-            //A MODIFIER (chaquer avec API Marketstack
-            string url = "";
+            string url = $"{_url}&appid={_key}";
             var reponse = await client.GetAsync(url);
+            
             if (reponse.IsSuccessStatusCode)
             {
                 return await reponse.Content.ReadAsStringAsync();
