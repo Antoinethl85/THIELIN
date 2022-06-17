@@ -10,7 +10,7 @@ namespace ConsoleApp6
     {
         static void Main(string[] args)
         {
-            Root weatherMorocco = GetWeatherMorocco();
+            //Root weatherMorocco = GetWeatherMorocco();
 
         }
         
