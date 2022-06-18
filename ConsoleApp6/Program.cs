@@ -62,12 +62,16 @@ namespace ConsoleApp6
 
             //Question 5
             Console.WriteLine("What is the humidity and pressure like in Kiev, Moscow and Berlin?");
-            Coordonates Kiev = new Coordonates(4, 4);
-            Coordonates Moscow = new Coordonates(4, 4);
-            Coordonates Berlin = new Coordonates(4, 4);
+            Coordonates Kiev = new Coordonates(50.4501f, 30.5234f);
+            Root humidityKiev = tp2.GetWeather(Kiev);
+            Coordonates Moscow = new Coordonates(55.755826f, 37.6173f);
+            Root humidityMoscow = tp2.GetWeather(Moscow);
+            Coordonates Berlin = new Coordonates(52.520007f, 13.404954f);
             Root humidityBerlin = tp2.GetWeather(Berlin);
-            Console.WriteLine();
-            
+
+            Console.WriteLine($"The humidity in Kiev is {humidityKiev.current.humidity}% and pressure is {humidityKiev.current.pressure} hPa");
+            Console.WriteLine($"The humidity in Moscow is {humidityMoscow.current.humidity}% and pressure is {humidityMoscow.current.pressure} hPa");
+            Console.WriteLine($"The humidity in Berlin is {humidityBerlin.current.humidity}% and pressure is {humidityBerlin.current.pressure} hPa");
         }
         
     }
