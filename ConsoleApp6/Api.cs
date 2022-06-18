@@ -16,24 +16,18 @@ namespace ConsoleApp6
         private string _key = "624c4ed18365308ce225acee2b5c2bd2";
         
 
-        public Root GetWeatherMorocco(Coordonates coordinates)
+        public Root GetWeather(Coordonates coordinates)
         {
-            Dictionary<string, string> content = new Dictionary<string, string>
-            {
-                { "lat", lat },
-                { "lon", lon }
-            };
-            
-            var json = Request(_client, coordinates).GetAwaiter().GetResult();
+            var json = Request(coordinates).GetAwaiter().GetResult();
             Root data = JsonConvert.DeserializeObject<Root>(json);
 
             return data;
         }
 
-        private async Task<string> Request(HttpClient client,Coordonates coordinates)
+        private async Task<string> Request(Coordonates coordinates)
         {
-            string url = $"{_url}?lat={coordinates.lat}&lon={coordinates.lon}&dt={time}&appid={_key}";
-            var reponse = await client.GetAsync(url);
+            string url = $"{_url}?lat={coordinates.lat}&lon={coordinates.lon}&units=metric&appid={_key}";
+            var reponse = await _client.GetAsync(url);
 
             if (reponse.IsSuccessStatusCode)
             {
