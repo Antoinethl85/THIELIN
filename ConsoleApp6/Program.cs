@@ -13,14 +13,15 @@ namespace ConsoleApp6
             Console.WriteLine("What's the weather like in Morocco ?");
             Coordonates Morocco = new Coordonates(	33.9715904f, -6.8498129f);
             Root weatherMorocco = tp2.GetWeather(Morocco);
-            Console.WriteLine($"The weather in Morocco is {weatherMorocco.current.weather[0].description} \n");
+            Console.WriteLine($"The weather in Morocco is {weatherMorocco.current.weather[0].description}. \n");
 
             //Question 2
             Console.WriteLine("When will the sun rise and set today in Oslo?");
             Coordonates Oslo = new Coordonates(59.9138688f, 10.7522454f);
             Root sunRiseOslo = tp2.GetWeather(Oslo);
-            Console.WriteLine($"The sun rise in Oslo is at {sunRiseOslo.current.sunrise} and the sun set is at {sunRiseOslo.current.sunset} Kelvin \n");
-            
+            DateTime timestamp = new DateTime(1970, 1, 1, 0, 0, 0, 0);
+            Console.WriteLine($"The sun rise in Oslo is at {timestamp.AddSeconds(sunRiseOslo.current.sunrise).TimeOfDay} and the sun set is at {timestamp.AddSeconds(sunRiseOslo.current.sunset).TimeOfDay} \n");
+
             //Question 3
             Console.WriteLine("What’s the temperature in Jakarta?");
             Coordonates Jakarta = new Coordonates(-6.2087634f, 106.845599f);
