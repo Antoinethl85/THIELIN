@@ -29,12 +29,37 @@ namespace ConsoleApp6
             
             //Question 4
             Console.WriteLine("Where is it more windy, New-York, Tokyo or Paris?");
-            Coordonates NY = new Coordonates(4, 4);
-            Coordonates Tokyo = new Coordonates(4, 4);
-            Coordonates Paris = new Coordonates(4, 4);
+            Coordonates NY = new Coordonates(40.712784f, -74.005941f);
+            Root windNY = tp2.GetWeather(NY);
+            Coordonates Tokyo = new Coordonates(35.709026f, 139.731992f);
+            Root windTokyo = tp2.GetWeather(Tokyo);
+            Coordonates Paris = new Coordonates(48.856614f, 2.3522219f);
             Root windParis = tp2.GetWeather(Paris);
-            Console.WriteLine();
-            
+
+            double maxWind = windNY.current.wind_speed;
+            if (maxWind < windParis.current.wind_speed)
+            {
+                if (windParis.current.wind_speed < windTokyo.current.wind_speed)
+                {
+                    Console.WriteLine($"It is more windy in Tokyo for {windTokyo.current.wind_speed * 3.6} km/h \n");
+                }
+                else
+                {
+                    Console.WriteLine($"It is more windy in Paris for {windParis.current.wind_speed * 3.6} km/h \n");
+                }
+            }
+            else
+            {
+                if (maxWind < windTokyo.current.wind_speed)
+                {
+                    Console.WriteLine($"It is more windy in Tokyo for {windTokyo.current.wind_speed * 3.6} km/h \n");
+                }
+                else
+                {
+                    Console.WriteLine($"It is more windy in New York for {maxWind * 3.6} km/h \n");
+                }
+            }
+
             //Question 5
             Console.WriteLine("What is the humidity and pressure like in Kiev, Moscow and Berlin?");
             Coordonates Kiev = new Coordonates(4, 4);
