@@ -13,18 +13,16 @@ namespace ConsoleApp6
             Api tp2 = new Api();
             
             //Question 1
-            Console.WriteLine("What's the weather like in Morocco ? \n");
+            Console.WriteLine("What's the weather like in Morocco ?");
             Coordonates Morocco = new Coordonates(39.099724f, -94.578331f);
             Root weatherMorocco = tp2.GetWeather(Morocco);
-            //double temperature = weatherMorocco.data[0].temp;
-            //string description = weatherMorocco.data[0].weather[0].description;
-            Console.WriteLine(weatherMorocco.data[0]);
+            Console.WriteLine($"The weather in Morocco is {weatherMorocco.current.weather[0].description} for a temperature of {weatherMorocco.current.temp}\n");
 
             //Question 2
             Console.WriteLine("When will the sun rise and set today in Oslo?");
-            Coordonates Oslo = new Coordonates(4, 4);
+            Coordonates Oslo = new Coordonates(59.9138688f, 10.7522454f);
             Root sunRiseOslo = tp2.GetWeather(Oslo);
-            Console.WriteLine();
+            Console.WriteLine($"The sun rise in Oslo is at {sunRiseOslo.current.sunrise} and the sun set is at {sunRiseOslo.current.sunset} Kelvin \n");
             
             //Question 3
             Console.WriteLine("What’s the temperature in Jakarta?");

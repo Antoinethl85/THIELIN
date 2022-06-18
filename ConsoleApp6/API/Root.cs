@@ -8,6 +8,6 @@ namespace ConsoleApp6.API
         public double lon { get; set; }
         public string timezone { get; set; }
         public int timezone_offset { get; set; }
-        public List<Datum> data { get; set; }
+        public Datum current { get; set; }
     }
 }

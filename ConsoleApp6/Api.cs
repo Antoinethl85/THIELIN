@@ -24,7 +24,7 @@ namespace ConsoleApp6
 
         private async Task<string> Request(Coordonates coordinates)
         {
-            string url = $"{_url}?lat={coordinates.lat}&lon={coordinates.lon}&units=metric&appid={_key}";
+            string url = $"{_url}?lat={coordinates.lat}&lon={coordinates.lon}&appid={_key}";
             var reponse = await _client.GetAsync(url);
 
             if (reponse.IsSuccessStatusCode)
