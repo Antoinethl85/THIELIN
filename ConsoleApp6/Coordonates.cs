@@ -2,10 +2,10 @@
 {
     public class Coordonates
     {
-        public double lat { get; set; }
-        public double lon { get; set; }
+        public float lat { get; set; }
+        public float lon { get; set; }
 
-        public Coordonates(double _latitude, double _longitude)
+        public Coordonates(float _latitude, float _longitude)
         {
             _latitude = lat;
             _longitude = lon;
