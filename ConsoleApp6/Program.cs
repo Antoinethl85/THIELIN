@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Net.Http;
 using ConsoleApp6.API;
-using Newtonsoft.Json;
 
 namespace ConsoleApp6
 {
@@ -14,9 +11,9 @@ namespace ConsoleApp6
             
             //Question 1
             Console.WriteLine("What's the weather like in Morocco ?");
-            Coordonates Morocco = new Coordonates(39.099724f, -94.578331f);
+            Coordonates Morocco = new Coordonates(	33.9715904f, -6.8498129f);
             Root weatherMorocco = tp2.GetWeather(Morocco);
-            Console.WriteLine($"The weather in Morocco is {weatherMorocco.current.weather[0].description} for a temperature of {weatherMorocco.current.temp}\n");
+            Console.WriteLine($"The weather in Morocco is {weatherMorocco.current.weather[0].description} \n");
 
             //Question 2
             Console.WriteLine("When will the sun rise and set today in Oslo?");
@@ -26,9 +23,9 @@ namespace ConsoleApp6
             
             //Question 3
             Console.WriteLine("What’s the temperature in Jakarta?");
-            Coordonates Jakarta = new Coordonates(4, 4);
+            Coordonates Jakarta = new Coordonates(-6.2087634f, 106.845599f);
             Root temperatureJakarta = tp2.GetWeather(Jakarta);
-            Console.WriteLine();
+            Console.WriteLine($"The temperature in Jakarta is {temperatureJakarta.current.temp - 273} °C\n");
             
             //Question 4
             Console.WriteLine("Where is it more windy, New-York, Tokyo or Paris?");

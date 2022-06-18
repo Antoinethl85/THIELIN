@@ -1,10 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "Oiry22RYRh49+tqOaMgf1xKs5mr/0MlOOaZwPFfl1kuLd0v4QyZiSLNQ83FPhk3OgRYTD4H58BFGgZQiCO0DYA==",
+  "dgSpecHash": "oNdi0v6jNpeRuGJmdqzdHHvLPqcMGj10DTzD00sH001lCnxJWRDnu2XPo6I30lCrn9Axtm2rjaVq/gb2uzRa+w==",
   "success": true,
   "projectFilePath": "C:\\Users\\Moi\\RiderProjects\\ConsoleApp6\\ConsoleApp6\\ConsoleApp6.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Moi\\.nuget\\packages\\newtonsoft.json\\13.0.2-beta1\\newtonsoft.json.13.0.2-beta1.nupkg.sha512"
+    "C:\\Users\\Moi\\.nuget\\packages\\newtonsoft.json\\13.0.2-beta1\\newtonsoft.json.13.0.2-beta1.nupkg.sha512",
+    "C:\\Users\\Moi\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\Moi\\.nuget\\packages\\xamarin.essentials\\1.7.3\\xamarin.essentials.1.7.3.nupkg.sha512"
   ],
   "logs": []
 }
